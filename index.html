@@ -52,7 +52,7 @@
   .work{background:var(--panel);border:1px solid var(--line);border-radius:22px;overflow:hidden;text-decoration:none;display:block;transition:border-color .2s}
   .work:hover{border-color:#3a3e4a}
   .shot{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--panel2)}
-  .shot iframe{position:absolute;top:0;left:0;width:1280px;height:800px;border:0;transform-origin:0 0;pointer-events:none}
+  .shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
   .work .meta{padding:20px 22px 24px}
   .work h3{font-size:19px;margin-bottom:4px}
   .work p{color:var(--muted);font-size:15px}
@@ -122,10 +122,10 @@
 
   <section id="works">
     <h2>Работы</h2>
-    <p class="sub">Это живые превью: нажмите, чтобы открыть сайт целиком.</p>
+    <p class="sub">Нажмите на карточку, чтобы открыть сайт.</p>
     <div class="works">
       <a class="work" href="https://baikun-ap.github.io/" target="_blank" rel="noopener">
-        <div class="shot"><iframe src="https://baikun-ap.github.io/" loading="lazy" tabindex="-1" title="Превью bai.kun" aria-hidden="true"></iframe></div>
+        <div class="shot"><img src="baikun.jpg" alt="Главная страница bai.kun" loading="lazy"></div>
         <div class="meta">
           <h3>bai.kun: тренажёр китайского</h3>
           <p>Иероглифы, пиньинь, тоны, аудирование, распознавание речи, тесты и карточки. Работает в браузере и ставится на телефон как приложение.</p>
@@ -133,7 +133,7 @@
         </div>
       </a>
       <a class="work" href="https://tmiras257-lgtm.github.io/tutor-demo/" target="_blank" rel="noopener">
-        <div class="shot"><iframe src="https://tmiras257-lgtm.github.io/tutor-demo/" loading="lazy" tabindex="-1" title="Превью сайта репетитора" aria-hidden="true"></iframe></div>
+        <div class="shot"><img src="tutor.jpg" alt="Демо-сайт репетитора китайского" loading="lazy"></div>
         <div class="meta">
           <h3>Сайт репетитора (демо)</h3>
           <p>Визитка с ценами, форматами уроков, отзывами и кнопкой записи в WhatsApp. Пример того, что получает репетитор.</p>
@@ -198,16 +198,5 @@
 
   <footer>© Miras · сайты для репетиторов и языковых школ</footer>
 </div>
-<script>
-  // Scale the live previews to their card width.
-  function fit(){
-    document.querySelectorAll('.shot').forEach(function(s){
-      var f = s.querySelector('iframe');
-      f.style.transform = 'scale(' + (s.clientWidth / 1280) + ')';
-    });
-  }
-  fit();
-  addEventListener('resize', fit);
-</script>
 </body>
 </html>
